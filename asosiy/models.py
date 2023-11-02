@@ -10,7 +10,7 @@ class Davlat(models.Model):
 
 class Club(models.Model):
     nom = models.CharField(max_length=30)
-    logo = models.FileField()
+    logo = models.FileField(blank=True)
     davlat = models.ForeignKey(Davlat, on_delete=models.CASCADE)
     president = models.CharField(max_length=30, blank=True)
     coach = models.CharField(max_length=30, blank=True)
