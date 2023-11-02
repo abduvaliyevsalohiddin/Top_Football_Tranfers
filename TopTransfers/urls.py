@@ -8,4 +8,6 @@ urlpatterns = [
     path('', home),
     path('clubs/', clubs),
     path('players/', players),
+    path('stats/', stats),
+    path('transfers_records/', transfers_records),
 ]
