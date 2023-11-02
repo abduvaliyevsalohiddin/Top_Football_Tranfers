@@ -8,103 +8,16 @@
       </div>
       <div class="content" style="margin-top: 170px">
         <div class="clubs">
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
 
+          {% for club in clubs %}
           <div class="club">
             <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
+              <img src="{{club.logo}}" alt="" />
+              {{club.nom}}
             </a>
           </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
-          <div class="club">
-            <a href="#">
-              <img src="img/manchester.logo.png" alt="" />
-              Manchester City
-            </a>
-          </div>
+          {% endfor %}
+
         </div>
         <p>
           It is a list of clubs with at least one ongoing employment contract

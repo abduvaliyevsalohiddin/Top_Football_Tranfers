@@ -7,7 +7,10 @@ def home(requests):
 
 
 def clubs(requests):
-    return render(requests, "clubs.html")
+    content = {
+        "clubs": Club.objects.all()
+    }
+    return render(requests, "clubs.html", content)
 
 
 def about(requests):
