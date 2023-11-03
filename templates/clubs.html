@@ -12,8 +12,12 @@
           {% for club in clubs %}
           <div class="club">
             <a href="#">
-              <img src="{{club.logo}}" alt="" />
-              {{club.nom}}
+                {% if club.logo %}
+              <img src="{{ club.logo.url }}" alt="" />
+                {% else %}
+              <img src="rasm.jpg" alt=" " />
+                {% endif %}
+              {{ club.nom }}
             </a>
           </div>
           {% endfor %}

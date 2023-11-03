@@ -43,4 +43,15 @@ class Transfer(models.Model):
     mavsum = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.player
+        return self.player.ism
+
+
+class HMavsum(models.Model):
+    hozirgi_mavsum = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.hozirgi_mavsum
+
+    class Meta:
+        verbose_name = "Hozirgi Mavsum"
+        verbose_name_plural = "Hozirgi Mavsum"
