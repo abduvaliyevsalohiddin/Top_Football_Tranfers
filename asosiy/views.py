@@ -47,3 +47,9 @@ def players_U_20(requests):
     }
     return render(requests, "U-20 players.html", content)
 
+
+def davlat_clublari(request, davlat):
+    content = {
+        "clubs": Club.objects.filter(davlat__nom=davlat.capitalize())
+    }
+    return render(request, 'england.html', content)
