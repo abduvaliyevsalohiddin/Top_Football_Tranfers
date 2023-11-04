@@ -53,3 +53,10 @@ def davlat_clublari(request, davlat):
         "clubs": Club.objects.filter(davlat__nom=davlat.capitalize())
     }
     return render(request, 'england.html', content)
+
+
+def latest_transfers(request):
+    content = {
+        "players": Transfer.objects.filter(mavsum=HMavsum.objects.get(id=1))
+    }
+    return render(request, 'latest-transfers.html', content)

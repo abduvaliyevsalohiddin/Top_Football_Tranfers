@@ -15,5 +15,6 @@ urlpatterns = [
     path('transfers_records/', transfers_records),
     path('players_U_20/', players_U_20),
     path('countries/<str:davlat>/', davlat_clublari),
+    path('latest_transfers/', latest_transfers),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
