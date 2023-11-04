@@ -60,3 +60,10 @@ def latest_transfers(request):
         "players": Transfer.objects.filter(mavsum=HMavsum.objects.get(id=1))
     }
     return render(request, 'latest-transfers.html', content)
+
+
+def country_clubs(request, club):
+    content = {
+        "players": Player.objects.filter(club__nom=club)
+    }
+    return render(request, 'country-clubs.html', content)

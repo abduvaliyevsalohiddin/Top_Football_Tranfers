@@ -20,10 +20,10 @@
 
             {% for player in players %}
           <tr>
-            <td>{{player.id}}</td>
-            <td>{{player.ism}}</td>
-            <td>{{player.club}}</td>
-            <td>{{player.narx}}</td>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ player.ism }}</td>
+            <td>{{ player.club }}</td>
+            <td>{{ player.narx }}</td>
           </tr>
             {% endfor %}
 

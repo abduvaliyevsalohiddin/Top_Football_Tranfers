@@ -11,7 +11,7 @@
 
           {% for club in clubs %}
           <div class="club">
-            <a href="#">
+              <a href="/country_clubs/{{ club }}/">
                 {% if club.logo %}
               <img src="{{ club.logo.url }}" alt="" />
                 {% else %}
