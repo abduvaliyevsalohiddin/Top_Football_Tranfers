@@ -34,18 +34,6 @@ class Player(models.Model):
         return self.ism
 
 
-class Transfer(models.Model):
-    player = models.ForeignKey(Player, on_delete=models.SET_NULL, null=True)
-    eski_club = models.ForeignKey(Club, on_delete=models.SET_NULL, null=True, related_name="sotuvlari")
-    yangi_club = models.ForeignKey(Club, on_delete=models.SET_NULL, null=True, related_name="olganlari")
-    narx = models.PositiveSmallIntegerField()
-    tah_narx = models.PositiveSmallIntegerField()
-    mavsum = models.CharField(max_length=10)
-
-    def __str__(self):
-        return self.player.ism
-
-
 class HMavsum(models.Model):
     hozirgi_mavsum = models.CharField(max_length=10)
 
@@ -55,3 +43,23 @@ class HMavsum(models.Model):
     class Meta:
         verbose_name = "Hozirgi Mavsum"
         verbose_name_plural = "Hozirgi Mavsum"
+
+
+class Transfer(models.Model):
+    player = models.ForeignKey(Player, on_delete=models.SET_NULL, null=True)
+    eski_club = models.ForeignKey(Club, on_delete=models.SET_NULL, null=True, related_name="sotuvlari")
+    yangi_club = models.ForeignKey(Club, on_delete=models.SET_NULL, null=True, related_name="olganlari")
+    narx = models.PositiveSmallIntegerField()
+    tah_narx = models.PositiveSmallIntegerField()
+    mavsum = models.CharField(max_length=10)
+
+    def save(self, *args, **kwargs):
+        m = HMavsum.objects.last().hozirgi_mavsum
+        if self.mavsum == m:
+            player = self.player
+            player.club = self.yangi_club
+            player.save()
+        super(Transfer, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.player.ism
