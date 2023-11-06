@@ -21,8 +21,18 @@ class PlayerAdmin(admin.ModelAdmin):
     ordering = ["id"]
 
 
+@admin.register(Transfer)
+class TransferAdmin(admin.ModelAdmin):
+    list_display = ["id","player", "eski_club", "yangi_club", "narx", "tah_narx", "mavsum"]
+    search_fields = ["player__ism", "eski_club__nom", "yangi_club__nom"]
+    search_help_text = "Player, Eski_club va Yangi_club ustuni bo'yicha qidiring"
+    list_filter = ["mavsum"]
+    autocomplete_fields = ["player", "eski_club", "yangi_club"]
+    ordering = ["id"]
+
+
 admin.site.register(Davlat)
 # admin.site.register(Club)
 # admin.site.register(Player)
-admin.site.register(Transfer)
+# admin.site.register(Transfer)
 admin.site.register(HMavsum)
